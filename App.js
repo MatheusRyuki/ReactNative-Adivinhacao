@@ -18,7 +18,10 @@ const App = () => {
   }
 
   return (
-    <LinearGradient colors={["#4e0329", "#ddb52f"]} style={styles.rootScreen}>
+    <LinearGradient
+      colors={[ Colors.primary700, Colors.accent500]}
+      style={styles.rootScreen}
+    >
       <ImageBackground
         source={require("./assets/background.png")}
         resizeMode="cover"

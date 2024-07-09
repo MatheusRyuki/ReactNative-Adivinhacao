@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Alert } from "react-native";
+import { View, Text, StyleSheet, Alert, FlatList } from "react-native";
 import Title from "../components/ui/Title";
 import { useEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -85,9 +85,11 @@ const GameScreen = ({ userNumber, onGameOver }) => {
         </View>
       </Card>
       <View>
-        {guessRounds.map((guessRound) => (
-          <Text key={guessRound}>{guessRound}</Text>
-        ))}
+        <FlatList
+          data={guessRounds}
+          keyExtractor={(item) => item}
+          renderItem={(itemData) => <Text>{itemData.item}</Text>}
+        />
       </View>
     </View>
   );

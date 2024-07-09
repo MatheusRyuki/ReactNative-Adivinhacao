@@ -59,14 +59,20 @@ const GameScreen = ({ userNumber, onGameOver }) => {
       <Title>Tentativa do adversário</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card>
-        <InstructionText>Mais ou menos?</InstructionText>
-        <View>
-          <PrimaryButton onPress={nextHandler.bind(this, "menos")}>
-            -
-          </PrimaryButton>
-          <PrimaryButton onPress={nextHandler.bind(this, "mais")}>
-            +
-          </PrimaryButton>
+        <InstructionText style={styles.instructionText}>
+          Mais ou menos?
+        </InstructionText>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextHandler.bind(this, "menos")}>
+              -
+            </PrimaryButton>
+          </View>
+          <View style={styles.buttonContainer}>
+            <PrimaryButton onPress={nextHandler.bind(this, "mais")}>
+              +
+            </PrimaryButton>
+          </View>
         </View>
       </Card>
       <View>
@@ -82,5 +88,14 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
+  },
+  instructionText: {
+    marginBottom: 12,
   },
 });

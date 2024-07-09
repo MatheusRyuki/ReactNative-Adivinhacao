@@ -3,6 +3,8 @@ import Title from "../components/ui/Title";
 import { useEffect, useState } from "react";
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
+import Card from "../components/ui/Card";
+import InstructionText from "../components/ui/InstructionText";
 
 const generateRandomBetween = (min, max, exclude) => {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -56,8 +58,8 @@ const GameScreen = ({ userNumber, onGameOver }) => {
     <View style={styles.screen}>
       <Title>Tentativa do adversário</Title>
       <NumberContainer>{currentGuess}</NumberContainer>
-      <View>
-        <Text>Mais ou menos?</Text>
+      <Card>
+        <InstructionText>Mais ou menos?</InstructionText>
         <View>
           <PrimaryButton onPress={nextHandler.bind(this, "menos")}>
             -
@@ -66,7 +68,7 @@ const GameScreen = ({ userNumber, onGameOver }) => {
             +
           </PrimaryButton>
         </View>
-      </View>
+      </Card>
       <View>
         <Text>Game Screen!</Text>
       </View>

@@ -43,9 +43,9 @@ const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
 
         <Text style={styles.summaryText}>
           Seu celular precisou de
-          <Text style={styles.highlightText}>{roundsNumber}</Text> tentativas
+          <Text style={styles.highlightText}> {roundsNumber}</Text> tentativas
           para acertar seu número
-          <Text style={styles.highlightText}>{userNumber}</Text>
+          <Text style={styles.highlightText}> {userNumber}</Text>
         </Text>
         <PrimaryButton onPress={onStartNewGame}>
           Começar novo jogo
